@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* header */
+
+.header_container {
+    width:100vw
+}
+.header {
+  width:60%;
+   padding-top: 20px;
+   margin: 0 auto;
+   text-align: center;
+}
+
+.header h1 {
+    font-size: clamp(2rem, 0.3878rem + 3.2653vw, 3rem);
+}
+
+.header h2 {
+    font-size: clamp(1rem, 0.6939rem + 1.6327vw, 1.5rem);
+    font-weight: 500;
+}
+
+.header h1, h2, p {
+    margin-bottom: 20px;
+    
+}
+
+.header p {
+    line-height:30px;;
+    font-size: clamp(0.7rem, 0.3469rem + 0.8163vw, 1rem);
+    margin-bottom:20px;
+    text-align: center;
+}
+
+/* dropdown menu */
+
+.dropdown {
+    max-width: 13em;
+    margin: 0 auto;
+    position: relative;
+    
+  }
+
+  .dropdown-btn {
+    background: #1d1f24;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7em 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin-bottom: 20px;;
+  }
+
+  .arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: transform ease-in-out 0.3s;
+  }
+
+  .dropdown-content {
+    list-style: none;
+    position: absolute;
+    top: 3.2em;
+    width:100%;
+    visibility: hidden;
+
+  }
+
+  .dropdown-content.active{
+    visibility: visible;
+  }
+
+  .dropdown-content li {
+    background: #2f3238;
+    border-radius: 0.5em;
+  }
+
+  .dropdown-content li a {
+    display: block;
+    padding: 0.7em 0.5em;
+    color: #fff;
+    margin: 0.1em 0;
+    text-decoration: none;
+  }
+
+/* containers for display */
+
+.container {
+
+    padding:10px;
+    width:500px;
+    margin:0 auto;
+}
+
+.card_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card_container.active {
+    margin-top:200px;
+}
+
+.card {
+    border: 1px solid black;
+    width:700px;
+    height: 420px;
+    margin-bottom: 20px;;
+    padding:10px;
+    overflow: hidden;
+}
+
+.image_container {
+    float:left;
+}
+
+.buttons_container {
+    display:flex;
+}
+
+/* forms */
+
+.form {
+    display:none;
+}
+
+.form.active {
+    display: block;
+}
+
+.delete_form {
+    display:none;
+
+}
+
+.delete_form.active {
+    display:block;
+}
+
+.delete_form {
+    display: flex;
+    justify-content: center;
+}
+
+textarea {
+    width: 60%;
+    height:250px;
+    white-space: pre-wrap;
+}
+
+#small_text_area {
+    width: 60%;
+    height:120px;
+}
+
+
+.add_input {
+    width:60%;
+    padding:10px;
+}
+
+.add_btn {
+    width:100px;
+    padding:20px;
+    margin-top:10px;
+    margin-right:10px;
+}
+
+/* comments */ 
+
+.comments_container {
+    
+    width:60%;
+    padding-top: 20px;
+    margin: 0 auto;
+    text-align: center;
+   
+ 
+}
+
+
+
+
+/* album info */
+
+.cover {
+    margin-right: 20px;;
+}
+
+.info {
+    margin-bottom:10px;
+}
+
+#album_title {
+    font-size: clamp(1.2rem, 0.6939rem + 1.6327vw, 2rem);
+    margin-bottom: 5px;;
+    font-weight: 600;
+}
+
+.year {
+    font-size: 0.8rem;
+    color: #798291;
+}
+
+#artist {
+    margin-bottom: 5px;;
+    font-size: clamp(0.8rem, 0.4327rem + 1.9592vw, 2rem);
+  
+}
+
+#review {
+    line-height: 25px;;
+    font-size: clamp(0.8rem, 0.6082rem + 0.4898vw, 1rem);
+    color: #20293A;;
+    
+   
+}
+
+#score {
+    font-size: clamp(0.6rem, 0.4776rem + 0.6531vw, 1rem);
+    color: #798291;;
+    margin-bottom:10px;
+    
+}
+
+/* full-review page */
+
+.full_review_container {
+    padding:20px;
+    width:80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.review_input {
+    width:60%;
+    height: 200px;
+}
+
+#full_review_btn {
+    background: #1d1f24;
+    font-size: 16px;
+    width: 150px;
+    border: none;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7em 0.7em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin: 20px 0px;;
+}
+
+#full_review_btn_2 {
+    background: #1d1f24;
+    font-size: 16px;
+    width: 150px;
+    border: none;
+    color: #fff;
+    padding: 0.7em 0.7em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin-top:15px;
+    margin-bottom: 15px;;
+}
+
+.comment {
+    margin: 0 auto;
+    width:70%;
+    margin-bottom: 20px;
+}
+
+#full_review_btn:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    color: #798291;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.id {
+    display: none;
+}
+
+/* new post */
+
+#newPostForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* search */
+
+.search_container {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchInput {
+    width:500px;
+    border-radius: 10px;
+    padding:10px;
+    margin-bottom: 20px;
+    border:1px solid #1d1f24;
+}
+
+.error_container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;;
+}
+
+.return {
+    text-align: center;
+}
+
+
+
+@media (max-width:680px) {
+
+    body {
+        width:100vw;
+    }
+    .card_container {
+        width: 90%;
+        margin:0 auto;
+    }
+
+    .card {
+        height:520px;
+    }
+
+    #searchInput {
+        width:80%;
+    }
+
+    .header_container {
+      padding:0;
+      margin:0;
+    }
+
+    .header {
+        width:80%;
+    }
+
+
+    .header p {
+        
+        text-align: center;
+        line-height: 20px;;
+    }
+
+    .comments_container {
+        width:90%;
+    }
+
+    .comment {
+        width:90%;
+    }
+
+
+}
+/* 
+@media (max-width: 400px) {
+
+
+    .header {
+  
+    
+   
+    }
+
+} */

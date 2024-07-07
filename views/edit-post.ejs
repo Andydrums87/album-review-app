@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit</h1> 
+    <h1><a href="/">Post</a></h1>
+
+    <div class="searchBar">
+        <div class="container">
+            <form action="/search" class="search__form" role="search" method="POST">
+            <input 
+            type="search" 
+            aria-label="search" 
+            id="searchInput" 
+            name="searchTerm" 
+            placeholder="Search Reviews">
+        </form>
+       
+    </div>
+
+    <% if (locals.items) { %>
+      <% items.forEach(item => { %>
+        <div class="card_container">
+            <div class="card">
+              <div class="image_container">
+                 <img src="<%= item.image %>" alt="album cover" class="cover"> 
+                 <div class="buttons_container">
+                    <button id="edit_btn" name="currentId"class="add_btn">Edit</button>
+                    <form action="/delete" method="post" class="delete_form">
+                     <input type="hidden" name="deleteItemId" value="<%= item.id %>">
+                     <button id="delete_btn" class="add_btn">Delete</button>
+                 </form>
+                 </div> 
+              </div>
+              
+               <p id="album_title" class="album_info"> <%= item.title %> 
+                <span class="year"><%= item.year %></span>
+               </p>
+                <p id="artist" class="album_info"> <%= item.artist %></p>
+                <p id="score" class="album_info"> <%= item.score %> /10</p>
+               <p id="review" class="album_info"> <%= item.review %></p>
+                
+            </div>   
+        </div>
+        <div class="form">
+         <form action="/edit:id" id="newPostForm" method="post">
+                <input type="hidden" name="updatedItemId" value = "<%= item.id %>">
+                <label for="">Artist</label>
+                <input id="input<%= item.id %>" type="text" value="<%= item.artist %>" name="updatedArtist" placeholder="artst" class="add_input">
+                <label for="">Title</label>
+                <input id="input<%= item.id %>" type="text" value="<%= item.title %>" name="updatedTitle" placeholder="title" class="add_input">
+                <label for="input">Opening Paragraph</label>
+                <textarea id="input<%= item.id %>"name="updatedOpeningPara" value="placeholder="Opening Paragraph" required maxlength="444"><%= item.para %></textarea>
+                <label for="">Review</label>
+                <textarea id="input<%= item.id %>"  name="updatedReview" class="review_area" placeholder="review"  rows="8" cols="60"><%= item.review %></textarea>
+                <label for="">Score</label>
+                <input id="input<%= item.id %>" type="text" value="<%= item.score %>" name="updatedScore" placeholder="score" class="add_input">
+                <label for="input">Year of Release</label>
+                <input id="<%= item.id %>"type="text" name="updatedYear" value="<%= item.year %>" placeholder="year" class="add_input" required>
+                <button class="add_btn" >Edit Post</button>
+         </form>
+            <form action="/delete" method="post" class="delete_form">
+                <input type="hidden" name="deleteItemId" value="<%= item.id %>">
+                <button id="delete_btn" class="add_btn">Delete</button>
+            </form>
+        </div>
+           <% }) %>
+          <% } %>
+          <% if (items.length === 0) { %>
+            <div class="error_container">
+                <h1>No Reviews for that Artist</h1>
+            </div>
+        <% } %>
+   <div>
+   </body>
+
+   <script>
+      const editBtn = document.querySelectorAll("#edit_btn")
+      const form = document.querySelectorAll(".form")
+      const deleteBtn = document.querySelectorAll("#delete_btn")
+      const deleteForm = document.querySelectorAll(".delete_form")
+      const card = document.querySelector(".info")
+
+
+
+     editBtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            form.forEach((form) => {
+                form.classList.toggle("active")
+                
+            })
+        })
+     })
+
+
+  
+ 
+
+
+    
+
+     
+   </script>
+</html>

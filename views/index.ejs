@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <div class="main_container">
+
+        <div class="dropdown">
+            <button class="dropdown-btn">
+              <span>Sort By</span>
+              <span class="arrow"></span>
+            </button>
+            <ul class="dropdown-content">
+                <li>
+                    <a href="/oldest">Oldest</a></li>
+                <li>
+                    <a href="/newest">Newest</a>
+                </li>
+                <li>
+                    <a href="/highest">Highest Ranked</a>
+                </li>
+                <li>
+                    <a href="/lowest">Lowest Ranked</a>
+                </li>
+               
+            </ul>
+        </div>
+     <% items.forEach(item => {%>
+        <div class="card_container">
+            <div class="card">
+                  <div class=image_container>
+                    <img src="<%= item.image %>" alt="album cover" class="cover">  
+                  </div>
+                 
+                     <p id="album_title" class="album_info"> <%= item.title %> 
+                     <span class="year"><%= item.year %></span>
+                  </p>
+                  <p id="artist" class="album_info"> <%= item.artist %></p>
+                  <p id="score" class="album_info"> <%= item.score %> /10</p>
+            
+             
+                    <% let text = item.para %>
+                    <% let replaceValue = text.replace(/(?:\r\n|\r|\n)/g, "</br>") %>
+                    <p id="review" class="album_info"> <%- replaceValue %></p>
+                    <form action="/full-review" method="post" class="read_more">
+                        <input type="hidden" name="thisReviewId" value="<%= item.id %>">
+                        <button id="full_review_btn">Full Review</button>
+                    </form>
+            </div>
+         
+           
+       
+        </div>
+    </div>
+   
+
+    <% }) %>
+<div class="comments_container">
+    <form action="/comments" method="post">
+    <h1 style="margin-bottom: 15px;">Please add your comment</h1>
+        
+        <input type="text" name="fullName" class="add_input" placeholder="Full Name" style="margin-bottom: 10px;">
+        
+        <textarea name="comment" id="new-comment" cols="60" rows="5" height="30px" placeholder="Your comment"></textarea>
+        <br>
+        <button id="full_review_btn_2">Post</button>
+        </form>
+    <div>
+
+
+        <div class="comment">
+            <h2>Comments</h2>
+            <% userComment.forEach(comment => { %>
+          
+            <p><%= comment.name %></p>
+                <p><%= comment.comment %></p>
+              <% let d = comment.date %>
+              <% let day = d.toDateString() %>
+                <p> <%= day %></p>
+                <hr>
+          <%  }) %>
+        <div>
+                
+        
+
+   
+        
+         
+    
+        
+          
+        
+
+</body>
+
+<script>
+    const dropdownContent = document.querySelector(".dropdown-content");
+    const dropdownBtn = document.querySelector(".dropdown-btn");
+    const container = document.querySelector(".card_container")
+
+    dropdownBtn.addEventListener("click", () => {
+        dropdownContent.classList.toggle("active")
+        container.classList.toggle("active");
+      
+    });
+
+
+</script>
+</html>

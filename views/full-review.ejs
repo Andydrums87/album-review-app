@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+   <% if (!locals.post || locals.userComment) { %>
+    <h1>hello</h1>
+   <% } else { %>
+    <div class="full_review_container">
+         <img src="<%= post.image %>" alt="album cover" class="cover" height="300px" width="300px">  
+                 
+                  <p id="album_title" class="album_info"> <%= post.title %> 
+                    <span class="year"><%= post.year %></span>
+                  </p>
+                  <p id="artist" class="album_info"> <%= post.artist %></p>
+                  <p id="score" class="album_info"> <%= post.score %> /10</p>
+                  <% let text = post.review %>
+                  <% let replaceValue = text.replace(/(?:\r\n|\r|\n)/g, "</br>") %>
+                   <p id="review" class="album_info"> <%- replaceValue %></p>
+        
+                  <h1 class="return"><a href="/">Go back</a></h1>
+    </div>
+    <% } %>
+</body>
+</html>

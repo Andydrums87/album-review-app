@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+        <% if (items.length === 0) { %>
+            <div class="error_container">
+                <h1>No Reviews for that Artist</h1>
+                <h1><a href="/">Go back</a></h1>
+            </div>
+        <% } else { %>
+        <div class="main_container">
+         <% for(let item of items){%>
+            <div class="card_container">
+                <div class="card">
+                 <div class="image_container">
+                  <img src="<%= item.image %>" alt="album cover" class="cover">  
+                 </div>
+                   <p id="album_title" class="album_info"> <%= item.title %> 
+                    <span class="year"><%= item.year %></span>
+                   </p>
+                    <p id="artist" class="album_info"> <%= item.artist %></p>
+                    <p id="score" class="album_info"> <%= item.score %> /10</p>
+                    <% let text = item.para %>
+                    <% let replaceValue = text.replace(/(?:\r\n|\r|\n)/g, "</br>") %>
+                    <p id="review" class="album_info"> <%- replaceValue %></p>
+                   <form action="/full-review" method="post">
+                    <input type="hidden" name="thisReviewId" value="<%= item.id %>">
+                    <button id="full_review_btn">Read More</button>
+                    
+                </form>
+                </div>   
+            </div>
+        </div>
+        
+        <% } %>
+        <h1 class="return"><a href="/">Go back</a></h1>
+        <% } %>
+        
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+  <h1><a href="/edit-post">Edit</a></h1> 
+    <h1><a href="/">Post</a></h1>
+    <form id="newPostForm" method="post" action="/api/posts">
+        <label for="input">Artist</label>
+        <input type="text" name="artist" placeholder="Artist" class="add_input"required> 
+        <label for="input">Album</label>
+        <input type="text" name="title" placeholder="Album Title" class="add_input" required>
+        <label for="input">Opening Paragraph</label>
+        <textarea id="small_text_area"name="openingPara" placeholder="Opening Paragraph" required maxlength="444"></textarea>
+        <label for="text">Review</label>
+        <textarea name="review" placeholder="Review" required cols="60"rows="8"></textarea>
+        <label for="input">Score</label>
+        <input type="text" name="score" placeholder="Score" class="add_input" required>
+        <label for="input">Year of Release</label>
+        <input type="text" name="year" placeholder="year" class="add_input" required>
+        <button class="add_btn" type="submit">Add Post
+         
+        </button>
+    </form>
+
+    
+    <% for(let item of postItems){%>
+        <div class="card_container">
+            <div class="card">
+              <div class="image_container">
+                 <img src="<%= item.image %>" alt="album cover" class="cover">  
+              </div>
+               <p id="album_title" class="album_info"> <%= item.title %> 
+                <span class="year"><%= item.year %></span>
+               </p>
+                <p id="artist" class="album_info"> <%= item.artist %></p>
+                <p id="score" class="album_info"> <%= item.score %> /10</p>
+               <p id="review" class="album_info"> <%= item.review %></p>
+       
+               
+            </div>   
+        </div>
+          <% } %>
+</body>
+<script>
+
+</script>
+</html>
