@@ -16,18 +16,18 @@ body {
     width:100vw
 }
 .header {
-  width:60%;
+   width:60%;
    padding-top: 20px;
    margin: 0 auto;
    text-align: center;
 }
 
 .header h1 {
-    font-size: clamp(2rem, 0.3878rem + 3.2653vw, 3rem);
+    font-size: clamp(3rem, 0.3878rem + 3.2653vw, 3rem);
 }
 
 .header h2 {
-    font-size: clamp(1rem, 0.6939rem + 1.6327vw, 1.5rem);
+    font-size: clamp(1.5rem, 0.6939rem + 1.6327vw, 1.5rem);
     font-weight: 500;
 }
 
@@ -37,8 +37,10 @@ body {
 }
 
 .header p {
-    line-height:30px;;
-    font-size: clamp(0.7rem, 0.3469rem + 0.8163vw, 1rem);
+    line-height: 35px;;
+    font-size: clamp(1.2rem, 0.6082rem + 0.4898vw, 1rem);
+    font-weight: 300;
+    color: #20293A;;
     margin-bottom:20px;
     text-align: center;
 }
@@ -121,9 +123,9 @@ body {
 }
 
 .card {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width:700px;
-    height: 420px;
+    /* height: 420px; */
     margin-bottom: 20px;;
     padding:10px;
     overflow: hidden;
@@ -194,9 +196,7 @@ textarea {
     margin: 0 auto;
     text-align: center;
    
- 
 }
-
 .comment_name {
     margin-top: 15px;
     font-weight: 600;
@@ -218,7 +218,7 @@ textarea {
 }
 
 #album_title {
-    font-size: clamp(1.2rem, 0.6939rem + 1.6327vw, 2rem);
+    font-size: clamp(1.5rem, 0.6939rem + 1.6327vw, 2rem);
     margin-bottom: 5px;;
     font-weight: 600;
 }
@@ -230,16 +230,15 @@ textarea {
 
 #artist {
     margin-bottom: 5px;;
-    font-size: clamp(0.8rem, 0.4327rem + 1.9592vw, 2rem);
+    font-size: clamp(1.2rem, 0.4327rem + 1.9592vw, 2rem);
   
 }
 
 #review {
-    line-height: 25px;;
-    font-size: clamp(0.8rem, 0.6082rem + 0.4898vw, 1rem);
+    line-height: 30px;;
+    font-size: clamp(1.2rem, 0.6082rem + 0.4898vw, 1rem);
+    font-weight: 300;
     color: #20293A;;
-    
-   
 }
 
 #score {
@@ -256,6 +255,10 @@ textarea {
     width:80%;
     margin: 0 auto;
     text-align: center;
+}
+
+.full_review_container .album_info {
+    margin-top: 20px;
 }
 
 .review_input {
@@ -365,17 +368,17 @@ a:hover {
         margin:0 auto;
     }
 
-    .card {
+    /* .card {
         height:520px;
-    }
+    } */
 
     #searchInput {
         width:80%;
     }
 
     .header_container {
-      padding:0;
-      margin:0;
+      /* padding:0;
+      margin:0; */
     }
 
     .header {
@@ -384,9 +387,8 @@ a:hover {
 
 
     .header p {
-        
         text-align: center;
-        line-height: 20px;;
+        line-height: 30px;;
     }
 
     .comments_container {
@@ -397,8 +399,33 @@ a:hover {
         width:90%;
     }
 
+    #comment-name {
+        width:80%;
+    }
 
-}
+    #new-comment {
+        width:80%;
+    }
+
+    .full_review_container {
+        width:90%;
+    }
+
+    .full_review_container .cover {
+        margin: 0 auto;
+    }
+
+    .full_review_container .album_info {
+        margin-top: 20px;
+    }
+    .cover {
+    padding-bottom: 3px;;
+    }
+
+
+ }
+
+
 /* 
 @media (max-width: 400px) {
 
