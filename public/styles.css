@@ -38,7 +38,7 @@ body {
 
 .header p {
     line-height: 35px;;
-    font-size: clamp(1.2rem, 0.6082rem + 0.4898vw, 1rem);
+    font-size: clamp(0.9rem, 0.6082rem + 0.4898vw, 1rem);
     font-weight: 300;
     color: #20293A;;
     margin-bottom:20px;
@@ -236,13 +236,13 @@ textarea {
 
 #review {
     line-height: 30px;;
-    font-size: clamp(1.2rem, 0.6082rem + 0.4898vw, 1rem);
+    font-size: clamp(1.1rem, 0.6082rem + 0.4898vw, 1rem);
     font-weight: 300;
     color: #20293A;;
 }
 
 #score {
-    font-size: clamp(0.6rem, 0.4776rem + 0.6531vw, 1rem);
+    font-size: clamp(0.8rem, 0.4776rem + 0.6531vw, 1rem);
     color: #798291;;
     margin-bottom:10px;
     
