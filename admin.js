@@ -9,7 +9,7 @@ const axios = require("axios")
 // const { Pool } = require('pg');
 // const itemsPool = new Pool ({
 //     user: 'Andydrums87',
-//     password: 'B7Byyhfyzva7Ze1PhElOgS8gA5S7ADTO',
+//     password: 'B7Byyhfyzva7Ze1PhElOgS8gA5S7ADTO',ß
 //     database: 'albums_o84k',
 //     host: 'dpg-cq40nhiju9rs739mus1g-a',
 //     port: 5432,

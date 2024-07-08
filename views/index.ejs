@@ -77,11 +77,11 @@
             <h2>Comments</h2>
             <% userComment.forEach(comment => { %>
           
-            <p><%= comment.name %></p>
+            <p class="comment_name"><%= comment.name %></p>
                 <p><%= comment.comment %></p>
               <% let d = comment.date %>
               <% let day = d.toDateString() %>
-                <p> <%= day %></p>
+                <p class="date"> <%= day %></p>
                 <hr>
           <%  }) %>
         <div>

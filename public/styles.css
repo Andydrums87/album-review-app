@@ -197,7 +197,14 @@ textarea {
  
 }
 
+.comment_name {
+    margin-top: 15px;
+    font-weight: 600;
+}
 
+.date {
+    color: #798291;
+}
 
 
 /* album info */
